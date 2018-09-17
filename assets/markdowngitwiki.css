@@ -69,6 +69,25 @@ float: left;
 #structure {
 background: #002b36;
 padding: 1em;
+border-radius: 10px;
+border-color: #93a1a1;
+border-style: solid;
+border-width: 1px;
+}
+
+#structure h1 {
+color: #93a1a1;
+
+font-family: sans-serif;
+font-weight: bold;
+
+border-bottom-color: #93a1a1;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+
+
+padding-bottom: 0.25rem;
+margin: 0 0 0.5rem 0;
 }
 
 #structure ul {
@@ -88,18 +107,19 @@ padding: 0;
 
 #structure a:link,
 #structure a:visited {
-    color: #2aa198;
+color: #2aa198;
 }
 
 #structure a:hover {
-    color: #93a1a1;
+color: #2aa198;
 }
 
 
 #content {
 position: relative;
+
 top: 0rem;
-width: 600px;
+width: 700px;
 padding: 20px;
 
 margin: auto;
@@ -107,9 +127,44 @@ margin: auto;
 background: #002b36;
 color: #839496;
 
+padding: 1em;
+border-radius: 10px;
+border-color: #93a1a1;
+border-style: solid;
+border-width: 1px;
+
+text-align: justify;
 
 /*	overflow: auto;*/
 }
+
+#content h1,
+#content h2,
+#content h3 {
+color: #93a1a1;
+
+font-family: sans-serif;
+/*font-weight: bold;*/
+
+/*border-bottom-color: #93a1a1;
+border-bottom-style: solid;
+border-bottom-width: 1px;*/
+
+
+padding-bottom: 0.25rem;
+margin: 0 0 0.5rem 0;
+
+}
+
+#content a:link,
+#content a:visited {
+color: #cb4b16;
+}
+
+#content a:hover {
+color: #93a1a1;
+}
+
 
 
 @media screen and (max-width: 900px) {

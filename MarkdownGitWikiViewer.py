@@ -66,6 +66,7 @@ class StructureHandler(tornado.web.RequestHandler):
         
         self.set_header("Content-Type", "text/html")
         
+        self.write("<h1>Structure</h1>")
         self.write("<ul>\n")
         
         for root, dirs, files in os.walk(PATH_PREFIX):
