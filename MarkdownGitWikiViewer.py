@@ -113,7 +113,10 @@ if __name__ == "__main__":
         if port is None:
             port = s.getsockname()[1]
     
-    webbrowser.open("http://localhost:{0}/".format(port))
+    url = "http://localhost:{0}/".format(port)
+    print("If the browser does not open automatically, please go to {0}.".format(url))
+    
+    webbrowser.open(url)
     
     tornado.ioloop.IOLoop.current().start()
 
