@@ -96,6 +96,8 @@ if __name__ == "__main__":
         description="Show Markdown files as Wiki")
     parser.add_argument("--data", help="Data directory",
                         default=os.getcwd())
+    parser.add_argument("--port", help="use this port for the HTTP server",
+                        default=0)
     args = parser.parse_args()
     
     global PATH_PREFIX
@@ -104,7 +106,7 @@ if __name__ == "__main__":
     print("Data directory is {0}".format(PATH_PREFIX))
     
     app = make_app()
-    sockets = tornado.netutil.bind_sockets(0, '')
+    sockets = tornado.netutil.bind_sockets(args.port, '')
     server = tornado.httpserver.HTTPServer(app)
     server.add_sockets(sockets)
     
