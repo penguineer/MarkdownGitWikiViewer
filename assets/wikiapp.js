@@ -1,5 +1,5 @@
 function switch_page(page) {
-    window.history.pushState("object or string", page, '/wiki'+page);
+    window.history.pushState("object or string", page, '/wiki/'+page);
     document.title = page;
 
     var xhttp = new XMLHttpRequest();
@@ -11,7 +11,7 @@ function switch_page(page) {
             document.getElementById("content").innerHTML = html;
         }
     };
-    xhttp.open("GET", '/data'+page, true);
+    xhttp.open("GET", '/data/'+page, true);
     xhttp.send();
 
 }
