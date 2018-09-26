@@ -21,7 +21,6 @@ def load_asset(asset):
     
     return asset
 
-
 class AssetHandler(tornado.web.RequestHandler):
     def get(self):
         path = self.request.uri[len("/assets/"):]
@@ -35,7 +34,15 @@ class AssetHandler(tornado.web.RequestHandler):
         else:
             self.set_header("Content-Type", "text/plain")
         
-        self.write(load_asset(path))
+        try:
+            self.write(load_asset(path))
+        
+        except FileNotFoundError:
+            self.clear()
+            self.set_status(404)
+            self.finish("<html><body>404 - File {0} cannot be found!</body></html>".format(path))
+        
+        return
 
 
 class MainHandler(tornado.web.RequestHandler):
@@ -58,7 +65,7 @@ class DataHandler(tornado.web.RequestHandler):
         except FileNotFoundError:
             self.clear()
             self.set_status(404)
-            self.finish("<html><body>File {0} cannot be found!</body></html>".format(path))
+            self.finish("<html><body>404 - File {0} cannot be found!</body></html>".format(path))
 
 
 class StructureHandler(tornado.web.RequestHandler):
